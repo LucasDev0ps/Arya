@@ -1310,10 +1310,15 @@ footer figure {
 	text-decoration: underline;
 }
 /*------------------------------------------------------media queries---------------------------------------------------------*/
-@media (min-width: 1220px) {
+/* @media (min-width: 1220px) {
  .container {
  padding: 0;
+	 @media (max-width: 1800px) {
+  .container {
+    max-width: 90%;
+  }
 }
+} */
  .newsletter-box {
  position: absolute;
  top: -71px;
@@ -1536,11 +1541,6 @@ footer figure {
  .thumb-pad6 figure img {
  width: 100%;
 }
-}
-@media (max-width: 1800px) {
-  .container {
-    max-width: 90%;
-  }
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 560px) {
