@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Presente</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('img/fundo.png');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            background-color: rgba(255, 192, 203, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .presente {
+            margin-bottom: 10px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 100%;
+            max-width: 200px;
+            text-align: left;
+        }
+
+        input[type="button"] {
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: rgb(13,13,13);
+            color: rgb(148,134,133);
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: rgb(148,134,133);
+            color: rgb(13,13,13);
+        }
+
+        .texto-abaixo-botao {
+            margin-top: 10px;
+            color: rgb(13,13,13);
+            font-style: italic;
+        }
+
+        .presentes-lista {
+            max-height: 350px;
+            overflow: auto;
+            text-align: left;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function redirecionarWhatsApp() {
+            var presentes = document.getElementsByName("presentes[]");
+            var nomes = document.getElementsByName("nomes[]");
+            var mensagem = "Olá, gostaria de confirmar minha presença!%0A%0A";
+            
+            for (var i = 0; i < presentes.length; i++) {
+                if (presentes[i].checked) {
+                    mensagem += "Presente: " + encodeURIComponent(presentes[i].value) + "%0ANome: " + encodeURIComponent(nomes[i].value) + "%0A%0A";
+                }
+            }
+            
+            var url = "https://wa.me/21996232491?text=" + mensagem;
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Presente</h2>
+        <form id="listaPresente">
+            <div class="presentes-lista">
+                <div class="presente">
+                    <!-- <label for="presente1"> -->
+                        <p>1 - Fralda RN + PCT Algodão de bolinha </p>
+                        <p>2 - Fralda RN + Álcool 70%</p>
+                        <p>3 - Fralda RN + Lenço umedecido</p>
+                        <p>4 - Fralda RN + Pomada antiassaduras</p>
+                        <p>5 - Fralda P + Aspirador nasal</p>
+                        <p>6 - Fralda P + Bastonetes de algodão</p>
+                        <p>7 - Fralda P + Sabonete neutro líquido </p>
+                        <p>8 - Fralda P + Sabonete barra</p>
+                        <p>9 - Fralda P + Chupeta </p>
+                        <p>10 - Fralda P + Manta</p>
+                        <p>11 - Fralda P + Toalhas com capuz</p>
+                        <p>12 - Fralda P + Coeiro</p>
+                        <p>13 - Fralda P + Mordedor</p>
+                        <p>14 - Fralda P +  Kit prato e colherzinha </p>
+                        <p>15 - Fralda P + Escova de mamadeira </p>
+                        <p>16 - Fralda M + Babadores</p>
+                        <p>17 - Fralda M + Mamadeira</p>
+                        <p>18 - Fralda M + Escova/ Pente bebê </p>
+                        <p>19 - Fralda M + Óleo para bebê </p>
+                        <p>20 - Fralda M + Kit tessourinha p/ unhas bebe</p>
+                        <p>21 - Fralda M + Termômetro </p>
+                        <p>22 - Fralda M + Cotonete</p>
+                        <p>23 - Fralda M + Touquinha</p>
+                        <p>24 - Fralda M + Saboneteira</p>
+                        <p>25 - Fralda M + Colônia (bebê)</p>
+                        <p>26 - Fralda G + Luvas</p>
+                        <p>27 - Fralda G + Paninho de bocal</p>
+                        <p>28 - Fralda G + Fralda de pano</p>
+                        <p>29 - Fralda G + Shampoo + condicionador</p>
+                        <p>30 - Fralda G + Body P</p>
+                        <p>31 - Fralda G + Body M</p>
+                        <p>32 - Fralda G + Body G</p>
+                        <p>33 - Fralda G +Naninha</p>
+                        <p>34 - Fralda G+ Banheira</p>
+                        <p>35 - Fralda G+ Mimo da preferência</p>
+                    <!-- </label> -->
+                </div>
+            </div>
+            <input type="button" value="Confirmar Presença" onclick="redirecionarWhatsApp()">
+            <p class="texto-abaixo-botao">Verifique a disponibilidade do presente com a mamãe!</p>
+        </form>
+    </div>
+</body>
+</html>
