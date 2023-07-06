@@ -23,6 +23,11 @@ textarea, input[type="text"], input[type="email"], input[type="search"], input[t
 	-webkit-appearance: none;
 	-moz-appearance: caret;
 }
+@media (max-width: 600px) {
+  .container {
+    max-width: 90%;
+  }
+}
 p {
 	margin-bottom: 23px;
 	line-height: 24px;
